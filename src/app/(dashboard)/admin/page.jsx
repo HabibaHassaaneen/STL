@@ -38,6 +38,7 @@ const AdminPage = () => {
 
       <CasesTable
         cases={cases}
+        currentUser={currentUser}
         page={page}
         setPage={setPage}
         totalCases={totalCases}

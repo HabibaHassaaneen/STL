@@ -5,10 +5,7 @@ import Provider from "./Provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Lama Dev School Management Dashboard",
-  description: "Next.js School Management System",
-};
+
 
 export default function RootLayout({
   children,

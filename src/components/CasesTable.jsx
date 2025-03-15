@@ -540,15 +540,15 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
     const topContentAdd = useMemo(
       () => {
       return (
-        <div className="flex justify-between items-center">
-           
-           {topContent}
+        <div className="flex justify-between gap-3 items-center">
             <div className="flex gap-3">
     
-              <ModalButton color="primary" endContent={<PlusIcon />}>
-              <CaseForm/>
-              </ModalButton>
-            </div>
+    <ModalButton color="primary" endContent={<PlusIcon />}>
+    <CaseForm/>
+    </ModalButton>
+  </div>
+           {topContent}
+           
             <span className="text-default-400 text-small">Total {totalCases} cases</span>
           </div>
       
@@ -588,6 +588,7 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
             <Button isDisabled={pages === 1} size="sm" variant="flat" onPress={onNextPage}>
               Next
             </Button>
+             
           </div>
         </div>
       );
@@ -691,7 +692,7 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
               <DeadlineProgress stop={caseItem.designed} hours={24} dedline={caseItem.entryDate.slice(-1)[0]}/>
               </TableCell>
               <TableCell>
-              <ActionChick id={caseItem._id} act={"designed"} isSelect={caseItem.designed}/>
+              <ActionChick   id={caseItem._id} act={"designed"} isSelect={caseItem.designed}/>
 {/* <form>
 
                 <Checkbox  isSelected={caseItem.designed} onValueChange={setIsSelected} isSelected={caseItem.designed}  />
