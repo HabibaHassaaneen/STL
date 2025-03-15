@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-  
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+     "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,21 +21,17 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
     "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     ".next/types/**/*.ts",
-    "src/components/Menu.jsx"
+    "src/**/*.js",
+    "src/**/*.jsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
