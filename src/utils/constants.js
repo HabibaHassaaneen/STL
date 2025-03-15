@@ -1,0 +1,1 @@
+export const CASES_PER_PAGE=5;
