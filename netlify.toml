@@ -1,5 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirect API routes to the /.netlify/functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# For all other routes, serve the SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  # Don't redirect API calls to index.html
+  conditions = {Path = {exclude = ["/api/**"]}}
