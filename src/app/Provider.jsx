@@ -1,14 +1,13 @@
 "use client";    
 import { useEffect, useState } from "react";
 import * as React from "react";
-import { AuthContextProvider } from '@/store/auth-context';
-import AuthGuard from '@/store/auth-guard';
-import { ToastContainer, toast } from 'react-toastify';
+import { AuthContextProvider } from './../store/auth-context';
+
 
 
 // Import providers
 import { HeroUIProvider } from "@heroui/system";
-import {CasesContextProvider}  from "@/store/cases-context";
+import {CasesContextProvider}  from "./../store/cases-context";
 
 export default function Provider({ children }) {
   const [mounted, setMounted] = useState(false);

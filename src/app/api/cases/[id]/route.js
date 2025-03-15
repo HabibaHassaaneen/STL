@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import connect from "@/lib/db";
+import connect from "./../../../lib/db";
 
 import { ObjectId } from 'mongodb'
-import Case from "@/lib/modals/CaseSchema";
-import {verifyToken} from "@/utils/verifyToken";
+import Case from "./../../../lib/modals/CaseSchema";
+import {verifyToken} from "./../../../utils/verifyToken";
 export const GET = async (req,{params}) => {
   try {
     await connect();

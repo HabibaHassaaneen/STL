@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import  connect from "@/lib/db";
-import Doctor from "@/lib/modals/DoctorSchema";
+import  connect from "./../../../lib/db";
+import Doctor from "./../../../lib/modals/DoctorSchema";
 export const GET=async()=>{
     try{
         await connect();

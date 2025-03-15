@@ -1,7 +1,7 @@
 'use client'
 import { useState ,useMemo,useCallback } from "react";
 import { useContext } from "react";
-import { CasesContext } from "@/store/cases-context.jsx";
+import { CasesContext } from "./../store/cases-context.jsx";
 import {  Avatar,Tooltip, } from "@heroui/react";
 import ActionChick from "./ActionChick"; // Assuming this is a custom component
 import DeadlineProgress from "./DeadlineProgress"; // Assuming this is a custom component

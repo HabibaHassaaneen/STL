@@ -3,9 +3,10 @@
 
 
 'use client'; 
-import CaseDefinitionModal from "@/components/CaseDefinitionModal";
+
 import { useEffect, useState, useCallback } from 'react';
-import TableReuseable  from '@/components/TableReuseable';
+import CaseDefinitionModal from "./../../../../components/CaseDefinitionModal";
+import TableReuseable from "./../../../../components/TableReuseable";
 import axios from 'axios';
 const INITIAL_VISIBLE_COLUMNS = ["name",'actions'];
  const columns = 

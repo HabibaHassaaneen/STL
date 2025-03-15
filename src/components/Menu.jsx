@@ -2,11 +2,11 @@
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import {Link} from "@heroui/react";
-import { AuthContext } from "@/store/auth-context.jsx";
+import { AuthContext } from "./../store/auth-context.jsx";
 
 import { useContext } from "react";
 
-import { CasesContext } from "@/store/cases-context.jsx";
+import { CasesContext } from "./../store/cases-context.jsx";
 
 const menuItems = [
   {

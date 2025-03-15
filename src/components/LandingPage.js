@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import BasicNavbar from "./BasicNavbar";
-import { AuthContext } from "@/store/auth-context"; // Import AuthContext
+import { AuthContext } from "./../store/auth-context"; // Import AuthContext
 
 export default function LandingPage() {
   const { currentUser, isLoading, isAuthenticated, checkAuth } = useContext(AuthContext);

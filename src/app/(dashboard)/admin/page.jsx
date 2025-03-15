@@ -1,9 +1,9 @@
 "use client";
 
 import { useContext, useState, useEffect } from "react";
-import { CasesContext } from "@/store/cases-context.jsx";
-import { AuthContext } from "@/store/auth-context.jsx";
-import CasesTable from "@/components/CasesTable";
+import { CasesContext } from "./../../../store/cases-context.jsx";
+import { AuthContext } from "./../../../store/auth-context.jsx";
+import CasesTable from "./../../../components/CasesTable.jsx";
 import { useRouter } from "next/navigation";
 
 

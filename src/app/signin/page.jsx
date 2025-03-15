@@ -6,9 +6,9 @@ import {Spinner} from "@heroui/react";
 import { Button, Input, Checkbox, Link, Form } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import axios from "axios";
-import { AuthContext } from '@/store/auth-context';
+import { AuthContext } from '../../store/auth-context';
 
-const DOMAIN = "http://localhost:3000";
+
 
 export default function Component() {
   const {setIsAuthenticated}=useContext(AuthContext)
@@ -28,7 +28,7 @@ export default function Component() {
     
     try {
       setLoading(true);
-      await axios.post(`${DOMAIN}/api/auth/login`, { email, password });
+      await axios.post(`/api/auth/login`, { email, password });
       setLoading(true);
       // Redirect user to dashboard after successful login
       setIsAuthenticated(true)

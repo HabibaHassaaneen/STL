@@ -1,6 +1,6 @@
 import { RadioGroup, Radio, CheckboxGroup, Checkbox, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import React, { useContext, useState } from "react";
-import { CasesContext } from "@/store/cases-context.jsx";
+import { CasesContext } from "./../store/cases-context.jsx";
 
 export default function FilterCheckboxGroup({ name, options, type = "radio" }) {
   const { filters, setFilters } = useContext(CasesContext);

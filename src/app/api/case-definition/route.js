@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import  connect from "@/lib/db";
-import CaseDefinition from "@/lib/modals/CaseDefinitionSchema";
+import  connect from "./../../../lib/db";
+import CaseDefinition from "./../../../lib/modals/CaseDefinitionSchema";
 export const GET=async()=>{
     try{
         await connect();

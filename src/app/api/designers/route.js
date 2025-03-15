@@ -1,6 +1,18 @@
 import { NextResponse } from "next/server";
-import  connect from "@/lib/db";
-import Designer from "@/lib/modals/DesignerSchema";
+import  connect from "./../../../lib/db";
+import Designer from "./../../../lib/modals/DesignerSchema";
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Fetches all designers from the database.
+ *
+ * Connects to the database and retrieves all designer records.
+ * Returns a JSON response with the list of designers on success.
+ * If an error occurs during the process, returns a JSON response with the error message.
+ *
+ * @returns {NextResponse} JSON response containing the designers or an error message.
+ */
+
+/******  d7c105a1-ec0d-41d4-999d-3cb71d4b53f3  *******/
 export const GET=async()=>{
     try{
         await connect();

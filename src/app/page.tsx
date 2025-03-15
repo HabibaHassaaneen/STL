@@ -1,4 +1,4 @@
-import LandingPage from "@/components/LandingPage.js";
+import LandingPage from "./../components/LandingPage";
 import { cookies } from 'next/headers'
 
 export default async  function Home() {

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import connect from "@/lib/db";
-import User from "@/lib/modals/UserSchema";
+import connect from "./../../../lib/db";
+import User from "./../../../lib/modals/UserSchema";
 
 export async function GET() {
     try {

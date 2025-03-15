@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import connect from "@/lib/db";
-import Case from "@/lib/modals/CaseSchema";
+import connect from "./../../../lib/db";
+import Case from "./../../../lib/modals/CaseSchema";
 
 
 

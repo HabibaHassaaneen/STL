@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useState, useEffect, useContext } from "react";
-import { verifyTokenForPage } from "@/utils/verifyToken";
+import { verifyTokenForPage } from "./../utils/verifyToken";
 
 const AuthContext = createContext(null);
 

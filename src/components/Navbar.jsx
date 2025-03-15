@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useContext,useEffect } from "react";
 import { Avatar } from "@heroui/react";
-import { AuthContext } from "@/store/auth-context.jsx";
+import { AuthContext } from "./../store/auth-context.jsx";
 const Navbar = () => {
   const { isAuthenticated,isLoading,checkAuth,currentUser} =useContext(AuthContext);
   useEffect(()=>{

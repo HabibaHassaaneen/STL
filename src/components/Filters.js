@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@heroui/react";
-import { CasesContext } from "@/store/cases-context.jsx";
+import { CasesContext } from "./../store/cases-context.jsx";
 
 // Predefined status options
 const statusOptions = [

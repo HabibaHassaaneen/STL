@@ -1,4 +1,4 @@
-import { verifyToken } from "@/utils/verifyToken"; // Import the token verification function
+import { verifyToken } from "./../../../../utils/verifyToken"; // Import the token verification function
 import { cookies } from "next/headers"; // For accessing cookies in Next.js API route
 
 export default async function handler(req, res) {

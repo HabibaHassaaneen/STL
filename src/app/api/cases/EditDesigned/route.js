@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import connect from "@/lib/db";
+import connect from "./../../../../lib/db";
 import { ObjectId } from 'mongodb'
-import Case from "@/lib/modals/CaseSchema";
+import Case from "./../../../../lib/modals/CaseSchema";
 
 export const PUT = async (req) => {
     try {

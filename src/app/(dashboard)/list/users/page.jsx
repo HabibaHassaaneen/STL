@@ -5,7 +5,8 @@
 'use client'; 
 
 import { useEffect, useState, useCallback } from 'react';
-import TableReuseable  from '@/components/TableReuseable';
+
+import TableReuseable from "./../../../../components/TableReuseable";
 import axios from 'axios';
 const INITIAL_VISIBLE_COLUMNS = ["username", "role", "email", "actions"];
  const columns = 
