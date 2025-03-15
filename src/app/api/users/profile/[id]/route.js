@@ -3,7 +3,7 @@ import connect from "./../../../../../lib/db";
 import User from "./../../../../../lib/modals/UserSchema";
 import jwt from 'jsonwebtoken';
 import * as jose from 'jose'
-import {verifyToken} from "@/utils/verifyToken";
+import {verifyToken} from "./../../../../../utils/verifyToken";
 /*  
 @method  DELETE
 */
