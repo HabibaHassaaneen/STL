@@ -1,7 +1,7 @@
-import Menu from "@/components/Menu";
+import Menu from "./../../components/Menu";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import Navbar from "./../../components/Navbar";
 import { SessionProvider } from "next-auth/react"
 import { cookies } from "next/headers";
 import { ToastContainer, toast } from 'react-toastify';

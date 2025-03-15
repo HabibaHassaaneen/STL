@@ -3,7 +3,7 @@ import connect from "./../../../../lib/db";
 import User from "./../../../../lib/modals/UserSchema";
 
 
-import { setCookie } from "@/utils/generateToken";
+import { setCookie } from "./../../../../utils/generateToken";
 /*************  ✨ Codeium Command ⭐  *************/
 /**
  * Handles the POST request to register a new user.
