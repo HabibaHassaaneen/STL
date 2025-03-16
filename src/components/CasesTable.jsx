@@ -339,7 +339,7 @@ const getPriority = ( dedline, hours) => {
 };
 
 
-export default function CasesTable({ currentUser,cases, page, setPage, totalCases,allCases,priorityFilter }) {
+export default function CasesTable({ role,cases, page, setPage, totalCases,allCases,priorityFilter }) {
 
     const [filterValue, setFilterValue] = useState("");
     const [selectedKeys, setSelectedKeys] = useState(new Set([]));
@@ -692,7 +692,7 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
               <DeadlineProgress stop={caseItem.designed} hours={24} dedline={caseItem.entryDate.slice(-1)[0]}/>
               </TableCell>
               <TableCell>
-              <ActionChick   id={caseItem._id} act={"designed"} isSelect={caseItem.designed}/>
+              <ActionChick role={role} visibleTo={['admin','designer']}  id={caseItem._id} act={"designed"} isSelect={caseItem.designed}/>
 {/* <form>
 
                 <Checkbox  isSelected={caseItem.designed} onValueChange={setIsSelected} isSelected={caseItem.designed}  />
@@ -701,7 +701,7 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
               <TableCell  >
 
                 
-              <ActionChick id={caseItem._id} act={"Try_in"} isSelect={caseItem.Try_in}/>
+              <ActionChick role={role} visibleTo={['admin']} id={caseItem._id} act={"Try_in"} isSelect={caseItem.Try_in}/>
                 
               </TableCell>
              
@@ -710,7 +710,7 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
               {/* <ConfirmationRadio name="confirmed" /> */}
             
           <Tooltip  className="capitalize" color={"primery"} content={caseItem.confirmed_date?new Date(caseItem.confirmed_date).toLocaleString('en-us', { timeZone: 'UTC' }):"-"}>
-          <ActionChick id={caseItem._id} act={"confirmed"} isSelect={caseItem.confirmed}/>
+          <ActionChick role={role} visibleTo={['admin','designer']} id={caseItem._id} act={"confirmed"} isSelect={caseItem.confirmed}/>
           </Tooltip>
               
         
@@ -719,7 +719,7 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
               <TableCell   > 
               {/* <ConfirmationRadio name="confirmed" /> */}
               
-              <ActionChick id={caseItem._id} act={"redesign"} entryDate={caseItem.entryDate}  isSelect={caseItem.redesign}/>
+              <ActionChick role={role} visibleTo={['admin','designer']} id={caseItem._id} act={"redesign"} entryDate={caseItem.entryDate}  isSelect={caseItem.redesign}/>
              
         
                 
@@ -734,12 +734,12 @@ export default function CasesTable({ currentUser,cases, page, setPage, totalCase
           </div>
               </TableCell>
               <TableCell>
-              <ActionChick id={caseItem._id} act={"production"} isSelect={caseItem.production}/>
+              <ActionChick role={role} visibleTo={['technician','admin']} id={caseItem._id} act={"production"} isSelect={caseItem.production}/>
 
               </TableCell>
              
               <TableCell>
-              <ActionChick id={caseItem._id} act={"delivered"} isSelect={caseItem.delivered}/>
+              <ActionChick role={role} visibleTo={['admin','technician']} id={caseItem._id} act={"delivered"} isSelect={caseItem.delivered}/>
 
               </TableCell>
               <TableCell>{caseItem.shade || "-"}</TableCell>

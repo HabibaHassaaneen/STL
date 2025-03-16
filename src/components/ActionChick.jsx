@@ -6,7 +6,7 @@ import React, { useEffect,useState,useTransition,startTransition } from 'react';
 import { Checkbox,Chip } from "@heroui/react";
 import { useTransform } from 'framer-motion';
 
-export default function ActionChick({act,id,isSelect,entryDate}) {
+export default function ActionChick({role,visibleTo,act,id,isSelect,entryDate}) {
   const [isConfirmed, setIsConfirmed] = useState(isSelect);
   const [isSelected, setIsSelected] = useState(isSelect);
   const { updateCase } = use(CasesContext);
@@ -68,7 +68,7 @@ Try_in: false,    // Reset "Try_in" to false
             isSelected={isSelect}
         onValueChange={handleCheckboxChange}
         className="text-blue-600"
-        isDisabled={isPending}
+      isDisabled={isPending||role==="user"||!visibleTo.includes(role)}
         defaultSelected= {isSelect}
         />
  

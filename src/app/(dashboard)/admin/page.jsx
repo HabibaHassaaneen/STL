@@ -1,22 +1,20 @@
 "use client";
 
-import { useContext, useState, useEffect } from "react";
-import { CasesContext } from "./../../../store/cases-context.jsx";
-import { AuthContext } from "./../../../store/auth-context.jsx";
-import CasesTable from "./../../../components/CasesTable.jsx";
+import { useContext, useEffect } from "react";
+import { CasesContext } from "../../../store/cases-context";
+import { AuthContext } from "../../../store/auth-context";
+import CasesTable from "../../../components/CasesTable";
 import { useRouter } from "next/navigation";
 
-
-
-const AdminPage = () => {
+const AdminPage =  () => {
   const router = useRouter();
   const { cases, page, setPage, totalCases, allCases, priorityFilter } = useContext(CasesContext);
-  const { isAuthenticated,isLoading,checkAuth,currentUser} =useContext(AuthContext);
-  useEffect(()=>{
-    checkAuth(true)
+  const { isAuthenticated, isLoading, checkAuth, currentUser } = useContext(AuthContext);
 
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
-  },[checkAuth])
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -24,21 +22,19 @@ const AdminPage = () => {
       </div>
     );
   }
+
   if (!isAuthenticated) {
-    return 
+    router.push("/signin");
+    return null;
   }
 
-  
-  
-    // Validate the token by calling the API
+  let role =  currentUser?.role;
 
   return (
     <div className="w-full bg-white p-4 flex gap-4 flex-col md:flex-row">
-  {/* <p>{currentUser.role}</p> */}
-
       <CasesTable
         cases={cases}
-        currentUser={currentUser}
+        role={role}
         page={page}
         setPage={setPage}
         totalCases={totalCases}

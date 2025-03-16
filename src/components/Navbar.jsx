@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useContext,useEffect } from "react";
+
+import Link from "next/link";
 import { Avatar } from "@heroui/react";
 import { AuthContext } from "./../store/auth-context.jsx";
 const Navbar = () => {
@@ -13,7 +15,15 @@ const Navbar = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+         
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500">
+        {/* <Link href="/" className="flex items-center justify-center lg:justify-start gap-2">
+            <Image src="/stl.png" alt="Scientific Team Lab Logo" width={32} height={32} />
+            <span className="hidden lg:block font-medium text-[#5FC5C1]">
+              Scientific Team Lab
+            </span>
+          </Link> */}
+        </div>
       </div>
     );
   }

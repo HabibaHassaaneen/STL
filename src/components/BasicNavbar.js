@@ -99,7 +99,7 @@ const BasicNavbar = React.forwardRef(
                 </span>
                 
                 {/* Admin Button - Only shown for admin users */}
-                {user.role === 'admin' && (
+                {user && (
                   <Button
                     className="bg-gradient-to-r from-blue-600 via-teal-500 to-green-400 text-white rounded-full"
                     radius="full"
