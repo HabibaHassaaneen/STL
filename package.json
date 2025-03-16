@@ -15,7 +15,9 @@
     "@heroui/theme": "^2.4.6",
     "@iconify/react": "^5.2.0",
     "@internationalized/date": "^3.6.0",
+    "@netlify/functions": "^3.0.1",
     "@netlify/next": "^1.4.9",
+    "@netlify/plugin-nextjs": "^5.10.0",
     "@nextui-org/react": "^2.6.10",
     "@react-aria/i18n": "^3.12.4",
     "@vertx/core": "^4.5.1",
@@ -53,8 +55,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@netlify/functions": "^3.0.1",
-    "@netlify/plugin-nextjs": "^5.10.0",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.2",
     "eslint": "^9",

@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Tell Netlify this is a single page app
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  # Don't redirect API calls or Next.js resources
+  conditions = {Path = {exclude = ["/api/*", "/_next/*"]}}
