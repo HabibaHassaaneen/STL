@@ -52,7 +52,7 @@ export default function LandingPage() {
                 variant="shadow"
                 className="h-12 w-[180px] bg-gradient-to-r from-blue-600 via-teal-500 to-green-400 text-white font-semibold text-lg tracking-wide rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-out"
               >
-                Get Started
+                Get Started V1
               </Button>
             )}
           </div>

@@ -2,12 +2,10 @@ import { NextResponse } from "next/server";
 import connect from "./../../../lib/db";
 import Case from "./../../../lib/modals/CaseSchema";
 
-
-
 export const GET = async (req) => {
   try {
     await connect();
-   
+
     const { searchParams } = new URL(req.url);
     const all = searchParams.get("all") === "true";
     const page = parseInt(searchParams.get("page")) || 1;
@@ -55,33 +53,41 @@ export const GET = async (req) => {
       casesQuery = casesQuery.skip(skip).limit(limit);
     }
 
-    const cases = await casesQuery.exec(); // ✅ Ensure query execution
+    const cases = await casesQuery.exec(); // Ensure query execution
 
-    return NextResponse.json({ totalCases, cases }, { status: 200 });
+    return NextResponse.json(
+      { totalCases, cases },
+      {
+        status: 200,
+        headers: {
+          'Cache-Control': 'no-store, must-revalidate, max-age=0',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      }
+    );
   } catch (error) {
     console.error("Error fetching cases:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 };
 
-
-
 export const POST = async (req) => {
   try {
     await connect();
     const body = await req.json();
 
-    // ✅ Convert entryDate & dueDate to UTC format
+    // Convert entryDate & dueDate to UTC format
     const entryDateObj = new Date(body.entryDate);
     let entryDate = [new Date(entryDateObj.getTime() - entryDateObj.getTimezoneOffset() * 60000)];
 
     const dueDateObj = new Date(body.dueDate);
     let dueDate = new Date(dueDateObj.getTime() - dueDateObj.getTimezoneOffset() * 60000);
 
-    // ✅ Create new case
+    // Create new case
     const newCase = await Case.create({ ...body, dueDate, entryDate });
 
-    // ✅ Populate related fields
+    // Populate related fields
     const populatedCase = await Case.findById(newCase._id)
       .populate("doctor_id", "_id name picture")
       .populate("designer_id", "_id name")
@@ -93,12 +99,3 @@ export const POST = async (req) => {
     return new NextResponse(`Error creating case: ${e.message}`, { status: 500 });
   }
 };
-
-// ✅ Helper function: Get doctor IDs by name
-async function getDoctorIds(doctorName) {
-  const doctors = await Doctor.find({
-    name: { $regex: new RegExp(doctorName, "i") }, // Case-insensitive search
-  }).select("_id");
-
-  return doctors.map((doc) => doc._id);
-}
